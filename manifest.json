@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "FormPilot — Smart Contact Form Filler",
+  "version": "1.0.0",
+  "description": "Detects contact forms on almost any site and fills them from your saved profiles using standard browser events.",
+  "minimum_chrome_version": "110",
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FormPilot",
+    "default_icon": {
+      "48": "icons/icon128.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "48": "icons/icon128.png",
+    "128": "icons/icon128.png"
+  }
+}

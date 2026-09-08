@@ -1,0 +1,13 @@
+/* Injected into host pages. Scoped to a single class so we never restyle a site. */
+.formpilot-filled {
+  outline: 2px solid rgba(21, 112, 239, 0.55) !important;
+  outline-offset: 1px !important;
+  border-radius: 3px;
+  transition: outline-color 240ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .formpilot-filled {
+    transition: none;
+  }
+}
